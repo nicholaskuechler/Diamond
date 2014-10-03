@@ -61,7 +61,7 @@ class DRBDCollector(diamond.collector.Collector):
                 if re.search('version', line) is None:
                     if re.search(r' \d: cs', line):
                         matches = re.match(r' (\d): (cs:\w+) (ro:\w+/\w+) '
-                                           '(ds:\w+/\w+) (\w{1}) .*', line)
+                                           '(ds:\w+/\w+) (.) .*', line)
                         current_resource = matches.group(1)
                         results[current_resource] = dict()
                     elif re.search(r'\sns:', line):
